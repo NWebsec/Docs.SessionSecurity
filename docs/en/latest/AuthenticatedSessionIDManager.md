@@ -38,7 +38,7 @@ Unauthenticated users get the classic ASP.NET session behaviour as the Authentic
 
 Using a MAC requires a secret key. The session fixation protection permits the use of the validation key from the machineKey settings or the use of a configured sessionAuthentication key. However, neither of these keys would be used directly. There's an important security principle: Never reuse keys for different purposes. You should live, and die, by this principle.
 
-In fact, they did a massive overhaul on how cryptographic keys were handled in ASP.NET 4.5: [Cryptographic Improvements in ASP.NET 4.5, pt. 2](http://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx). This has inspired how keys are handled in NWebsec.SessionSecurity.
+In fact, they did a massive overhaul on how cryptographic keys were handled in ASP.NET 4.5: [Cryptographic Improvements in ASP.NET 4.5, pt. 2](https://devblogs.microsoft.com/dotnet/cryptographic-improvements-in-asp-net-4-5-pt-2/). This has inspired how keys are handled in NWebsec.SessionSecurity.
 
 NWebsec.SessionSecurity contains an implementation of the NIST SP800-108 counter-mode KDF with HMACSHA256 (similar to what they use in ASP.NET 4.5), and uses this to derive the key used for session authentication. This is important, as the KDF is designed to ensure that derived keys are independent of each other security wise. If one key gets compromised that should not aid an attacker in compromising the master key or any other derived keys.
 
