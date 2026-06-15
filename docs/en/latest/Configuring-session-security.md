@@ -38,7 +38,7 @@ Basic configuration is added to web.config when installing the NWebsec.SessionSe
 
 In short, The session security config section is declared, the sessionState element is configured with the AuthenticatedSessionIDManager, the NWebsec configuration directory is declared as a hidden segment, and an empty session security configuration section is added.
 
-The configuration schema enables intellisense for the NWebsec.SessionSecurity configuration, so feel free to start of with the empty section and add the configuration you need.
+The configuration schema enables intellisense for the NWebsec.SessionSecurity configuration, so feel free to start off with the empty section and add the configuration you need.
 
 Note that everything's disabled by default, so you need to enable the session fixation protection in config.
 
